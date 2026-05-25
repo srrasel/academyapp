@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "academy",
-    "slug": "academy",
+    "name": "Bridge Academy",
+    "slug": "bridge-academy",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
