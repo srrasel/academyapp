@@ -34,7 +34,6 @@ debug.log
 *.pem
 
 # local env files
-.env
 .env*.local
 admin/.env
 
@@ -54,3 +53,4 @@ admin/node_modules/
 # local leftovers
 assets/*(1).*
 assets/*-temp.*
+config.bat
