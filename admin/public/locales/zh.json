@@ -1,0 +1,168 @@
+{
+  "common": {
+    "continue": "继续",
+    "next": "下一个",
+    "back": "后退",
+    "save": "节省",
+    "done": "完毕",
+    "cancel": "取消",
+    "loading": "加载中...",
+    "saving": "保存...",
+    "saved": "已保存 ✓",
+    "learner": "学习者",
+    "seeAll": "查看全部",
+    "unit": "单元",
+    "lesson": "课",
+    "of": "的",
+    "nextBadge": "下一个",
+    "signOut": "登出",
+    "posting": "发布中……",
+    "post": "邮政",
+    "pleaseWait": "请稍等..."
+  },
+  "tabs": {
+    "home": "家",
+    "myLearning": "我的学习",
+    "progress": "进步",
+    "community": "社区",
+    "profile": "轮廓"
+  },
+  "welcome": {
+    "headline": "开启你的人生教练之旅",
+    "getStarted": "开始使用",
+    "login": "登录"
+  },
+  "language": {
+    "title": "选择您的语言",
+    "subtitle": "请选择您偏好的语言",
+    "hint": "您稍后可以在“个人资料”→“设置”中更改语言。"
+  },
+  "account": {
+    "createTitle": "创建您的帐户",
+    "createSubtitle": "加入 Bridge Academy，开启你的旅程",
+    "welcomeBack": "欢迎回来",
+    "loginSubtitle": "登录以继续学习",
+    "signupSubtitle": "创建您的 Bridge Academy 帐户",
+    "fullName": "姓名",
+    "email": "电子邮件",
+    "password": "密码",
+    "createAccount": "创建账户",
+    "noAccount": "还没有账号？",
+    "hasAccount": "已有账号？"
+  },
+  "goal": {
+    "title": "你的目标是什么？",
+    "subtitle": "这有助于我们为您定制学习体验"
+  },
+  "journey": {
+    "title": "你的学习之旅",
+    "subtitle": "{{units}} 个单元 • {{lessons}} 节课 • 互动测验",
+    "startLearning": "开始学习"
+  },
+  "home": {
+    "greeting": "你好，{{name}} 👋",
+    "subGreeting": "继续加油！你做得很好。",
+    "mainProgress": "主课程进展",
+    "unitsCompleted": "您已完成 {{completed}} 个单元，共计 {{total}} 个单元",
+    "continueUnit": "继续单元 {{id}}",
+    "currentUnit": "当前单位",
+    "subunitsCompleted": "已完成子单元数/总计 已完成子单元数",
+    "continueLearning": "继续学习",
+    "quoteOfDay": "每日名言",
+    "nextCourses": "后续课程"
+  },
+  "myLearning": {
+    "title": "我的学习",
+    "unitsMeta": "{{units}} 单元",
+    "viewAllUnits": "查看所有 {{count}} 个单元",
+    "recentActivity": "近期活动",
+    "viewMainCourse": "查看主菜",
+    "mainCourse": "主菜",
+    "advancedCourses": "高级课程",
+    "advancedComingSoon": "高级课程即将推出。",
+    "advancedLocked": "完成主课程后（{{percent}}% 完成），高级课程即可解锁。"
+  },
+  "course": {
+    "overview": "课程概述",
+    "allUnits": "所有单位",
+    "units": "单位",
+    "lessons": "课程",
+    "hours": "小时",
+    "whatYouLearn": "你将学到什么",
+    "startLearning": "开始学习",
+    "unitLabel": "单元 {{id}}"
+  },
+  "unit": {
+    "continueNext": "继续下一个子单元",
+    "startUnit": "启动单元"
+  },
+  "lesson": {
+    "markComplete": "标记为已完成",
+    "nextLesson": "下一个",
+    "writeNotes": "请在此处写下您的笔记……",
+    "writeNotesShort": "记笔记……",
+    "saveNote": "保存笔记",
+    "textLesson": "课文",
+    "contentFallback": "本课是普通心理学课程的一部分。请复习“{{title}}”的相关内容，完成后标记为已完成。",
+    "unitLessonOf": "单元 {{unitId}} • 课程 {{current}}，共 {{total}} 节",
+    "bookmarkAdded": "已收藏",
+    "bookmarkRemoved": "书签已移除",
+    "typeVideo": "视频",
+    "typeAudio": "声音的",
+    "typeQuiz": "测验",
+    "typeText": "文本"
+  },
+  "quiz": {
+    "nextQuestion": "下一个问题",
+    "finishQuiz": "完成测验",
+    "defaultTitle": "测验",
+    "questionTemplate": "关于“{{topic}}”，哪个说法最准确？（问题 {{num}}）",
+    "explanationTemplate": "本次测验回顾了普通心理学课程中“{{topic}}”的关键概念。",
+    "optionA": "它与教练实践无关。",
+    "optionB": "它有助于解释思想、情感和行为",
+    "optionC": "它取代了与客户建立融洽关系的必要性。",
+    "optionD": "它仅适用于临床治疗环境。"
+  },
+  "progress": {
+    "title": "我的进度",
+    "unitsCompleted": "已完成单元",
+    "lessonsCompleted": "已完成课程",
+    "hoursStudied": "学习时长",
+    "averageScore": "平均测验分数",
+    "studyStreak": "学习连胜",
+    "days": "天",
+    "unitProgress": "单元进度",
+    "scoreTrend": "得分趋势",
+    "calendar": "学习日历",
+    "calendarHint": "记录你的每日学习习惯"
+  },
+  "achievements": {
+    "badges": "你的徽章",
+    "recent": "近期成就",
+    "certificate": "证书预览",
+    "download": "下载证书"
+  },
+  "community": {
+    "title": "社区",
+    "placeholder": "分享你的学习历程……",
+    "empty": "目前还没有帖子。快来分享吧！"
+  },
+  "settings": {
+    "title": "设置",
+    "profile": "轮廓",
+    "name": "姓名",
+    "email": "电子邮件",
+    "language": "语言",
+    "savingLanguage": "（保存...）"
+  },
+  "menu": {
+    "app": "应用程序",
+    "course": "课程",
+    "continueLessons": "继续学习",
+    "myProgress": "我的进度",
+    "noLessons": "目前暂无课程。请从“我的学习”开始。"
+  },
+  "logo": {
+    "tagline": "普通心理学"
+  }
+}

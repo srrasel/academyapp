@@ -36,10 +36,25 @@ export const styles = StyleSheet.create({
     fontWeight: '500',
     color: colors.text,
   },
+  itemWarm: {
+    backgroundColor: colors.accentWarmCard,
+    borderColor: colors.accentWarmBorder,
+  },
+  itemWarmSelected: {
+    borderColor: colors.accentWarmDark,
+    backgroundColor: colors.accentWarmSoft,
+    borderWidth: 2,
+  },
+  leftIconWarm: {
+    backgroundColor: colors.accentWarmSoft,
+  },
+  checkWarm: {
+    backgroundColor: colors.accentWarmDark,
+  },
   check: {
-    width: 24,
-    height: 24,
-    borderRadius: 12,
+    width: 26,
+    height: 26,
+    borderRadius: 13,
     backgroundColor: colors.primary,
     alignItems: 'center',
     justifyContent: 'center',

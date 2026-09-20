@@ -1,49 +1,41 @@
 import { View, Text, ImageBackground } from 'react-native';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
-import { LinearGradient } from 'expo-linear-gradient';
 import Logo from '../../components/Logo/Logo';
 import PrimaryButton from '../../components/PrimaryButton/PrimaryButton';
 import SecondaryButton from '../../components/SecondaryButton/SecondaryButton';
+import { useLocale } from '../../context/LocaleContext';
 import { images } from '../../data/images';
 import { styles } from './WelcomeScreen.styles';
 
 export default function WelcomeScreen({ navigation }) {
   const insets = useSafeAreaInsets();
+  const { t } = useLocale();
 
   return (
     <View style={styles.root}>
       <ImageBackground
-        source={{ uri: images.welcome }}
+        source={images.welcome}
         style={styles.root}
+        imageStyle={styles.backgroundImage}
         resizeMode="cover"
       >
-        <LinearGradient
-          colors={[
-            'rgba(0,0,0,0.35)',
-            'rgba(0,0,0,0.15)',
-            'rgba(0,0,0,0.55)',
-            'rgba(0,0,0,0.75)',
-          ]}
-          locations={[0, 0.35, 0.7, 1]}
-          style={styles.gradient}
-        />
         <SafeAreaView style={styles.background} edges={['top', 'bottom']}>
           <View style={styles.topSection}>
             <Logo variant="light" imageOnly />
           </View>
 
-          <View style={[styles.bottomContent, { paddingBottom: 20 + insets.bottom }]}>
-            <Text style={styles.headline}>
-              Start your journey to become a life coach
-            </Text>
+          <View style={styles.spacer} />
+
+          <View style={[styles.bottomContent, { paddingBottom: 12 + insets.bottom }]}>
+            <Text style={styles.headline}>{t('welcome.headline')}</Text>
             <PrimaryButton
-              label="Get Started"
-              onPress={() => navigation.navigate('Language')}
+              label={t('welcome.getStarted')}
+              onPress={() => navigation.navigate('CreateAccount')}
               style={styles.button}
             />
             <SecondaryButton
-              label="Login"
-              onPress={() => navigation.navigate('CreateAccount')}
+              label={t('welcome.login')}
+              onPress={() => navigation.navigate('EmailAuth', { mode: 'login' })}
               style={styles.button}
             />
           </View>

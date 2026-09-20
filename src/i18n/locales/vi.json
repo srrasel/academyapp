@@ -1,0 +1,173 @@
+{
+  "common": {
+    "continue": "Tiếp tục",
+    "next": "Kế tiếp",
+    "back": "Mặt sau",
+    "save": "Cứu",
+    "done": "Xong",
+    "cancel": "Hủy bỏ",
+    "loading": "Đang tải...",
+    "saving": "Đang lưu...",
+    "saved": "Đã lưu ✓",
+    "learner": "Người học",
+    "seeAll": "Xem tất cả",
+    "unit": "Mục",
+    "lesson": "Bài học",
+    "of": "của",
+    "nextBadge": "KẾ TIẾP",
+    "signOut": "Đăng xuất",
+    "posting": "Đang đăng...",
+    "post": "Bưu kiện",
+    "pleaseWait": "Vui lòng chờ..."
+  },
+  "tabs": {
+    "home": "Trang chủ",
+    "myLearning": "Quá trình học tập của tôi",
+    "progress": "Tiến triển",
+    "community": "Cộng đồng",
+    "profile": "Hồ sơ"
+  },
+  "welcome": {
+    "headline": "Hãy bắt đầu hành trình trở thành huấn luyện viên cuộc sống của bạn.",
+    "getStarted": "Bắt đầu",
+    "login": "Đăng nhập"
+  },
+  "language": {
+    "title": "Chọn ngôn ngữ của bạn",
+    "subtitle": "Vui lòng chọn ngôn ngữ bạn muốn sử dụng",
+    "hint": "Bạn có thể thay đổi ngôn ngữ sau trong mục Hồ sơ → Cài đặt"
+  },
+  "account": {
+    "createTitle": "Tạo tài khoản của bạn",
+    "createSubtitle": "Hãy gia nhập Bridge Academy và bắt đầu hành trình của bạn!",
+    "welcomeBack": "Chào mừng trở lại!",
+    "loginSubtitle": "Đăng nhập để tiếp tục học tập",
+    "signupSubtitle": "Tạo tài khoản Bridge Academy của bạn",
+    "fullName": "Họ và tên đầy đủ",
+    "email": "Địa chỉ email",
+    "password": "Mật khẩu",
+    "createAccount": "Tạo tài khoản",
+    "noAccount": "Bạn chưa có tài khoản?",
+    "hasAccount": "Bạn đã có tài khoản chưa?"
+  },
+  "goal": {
+    "title": "Mục tiêu của bạn là gì?",
+    "subtitle": "Điều này giúp chúng tôi cá nhân hóa trải nghiệm học tập của bạn."
+  },
+  "journey": {
+    "title": "Hành trình học tập của bạn",
+    "subtitle": "{{units}} mục • {{lessons}} bài học • Bài kiểm tra tương tác",
+    "startLearning": "Bắt đầu học tập"
+  },
+  "home": {
+    "greeting": "Chào bạn, {{name}} 👋",
+    "subGreeting": "Cứ tiếp tục nhé! Bạn đang làm rất tốt.",
+    "subGreetingStart": "Chào mừng bạn! Sẵn sàng bắt đầu bài học chưa?",
+    "mainProgress": "Tiến trình khóa học chính",
+    "unitsCompleted": "Bạn đã hoàn thành {{completed}} trong tổng số {{total}} mục.",
+    "continueUnit": "Tiếp tục mục {{id}}",
+    "currentUnit": "Mục hiện tại",
+    "subunitsCompleted": "{{completed}}/{{total}} chương đã hoàn thành",
+    "continueLearning": "Tiếp tục học tập",
+    "quoteOfDay": "Câu nói hay trong ngày",
+    "nextCourses": "Các khóa học tiếp theo"
+  },
+  "myLearning": {
+    "title": "Quá trình học tập của tôi",
+    "unitsMeta": "{{units}} mục",
+    "viewAllUnits": "Xem tất cả {{count}} mục",
+    "recentActivity": "Hoạt động gần đây",
+    "viewMainCourse": "Xem khóa học chính",
+    "mainCourse": "Khóa học chính",
+    "advancedCourses": "Các khóa học nâng cao",
+    "advancedComingSoon": "Các khóa học nâng cao sẽ sớm ra mắt.",
+    "advancedLocked": "Các khóa học nâng cao sẽ được mở khóa sau khi hoàn thành khóa học chính (đã hoàn thành {{percent}}%)."
+  },
+  "course": {
+    "overview": "Tổng quan khóa học",
+    "allUnits": "Tất cả các mục",
+    "units": "Mục",
+    "lessons": "Bài học",
+    "hours": "Giờ",
+    "whatYouLearn": "Những điều bạn sẽ học",
+    "startLearning": "Bắt đầu học tập",
+    "unitLabel": "Mục {{id}}"
+  },
+  "unit": {
+    "continueNext": "Tiếp tục sang phần tiếp theo",
+    "startUnit": "Bắt đầu mục"
+  },
+  "lesson": {
+    "markComplete": "Đánh dấu là đã hoàn thành",
+    "nextLesson": "Kế tiếp",
+    "writeNotes": "Hãy ghi chú ở đây...",
+    "writeNotesShort": "Hãy ghi chép lại...",
+    "saveNote": "Lưu ghi chú",
+    "textLesson": "Bài học bằng văn bản",
+    "contentFallback": "Bài học này là một phần của khóa học Tâm lý học đại cương. Hãy xem lại tài liệu cho \"{{title}}\" và đánh dấu là đã hoàn thành khi xong.",
+    "unitLessonOf": "Mục {{unitId}} • Bài học {{current}} trong tổng số {{total}}",
+    "unitChapterOf": "Mục {{unitId}} • Chương {{current}} trong tổng số {{total}}",
+    "quizPassedMessage": "Bạn đã vượt qua Mục {{unitId}}",
+    "bookmarkAdded": "Đã đánh dấu",
+    "bookmarkRemoved": "Đã bỏ đánh dấu",
+    "typeVideo": "Video",
+    "typeAudio": "Âm thanh",
+    "supportSheet": "Tài liệu hỗ trợ",
+    "questions": "Câu hỏi",
+    "typeQuiz": "Trắc nghiệm",
+    "typeText": "Văn bản"
+  },
+  "quiz": {
+    "nextQuestion": "Câu hỏi tiếp theo",
+    "finishQuiz": "Hoàn thành bài kiểm tra",
+    "defaultTitle": "Trắc nghiệm",
+    "questionTemplate": "Liên quan đến \"{{topic}}\", phát biểu nào sau đây là chính xác nhất? (Câu hỏi {{num}})",
+    "explanationTemplate": "Bài kiểm tra này ôn tập các ý chính từ chủ đề \"{{topic}}\" trong khóa học Tâm lý học đại cương.",
+    "optionA": "Điều này không liên quan gì đến hoạt động huấn luyện.",
+    "optionB": "Nó giúp giải thích suy nghĩ, cảm xúc và hành vi.",
+    "optionC": "Nó thay thế nhu cầu xây dựng mối quan hệ tốt với khách hàng.",
+    "optionD": "Điều này chỉ áp dụng cho các cơ sở điều trị lâm sàng."
+  },
+  "progress": {
+    "title": "Tiến trình của tôi",
+    "unitsCompleted": "Số mục đã hoàn thành",
+    "lessonsCompleted": "Bài học đã hoàn thành",
+    "hoursStudied": "Số giờ học",
+    "averageScore": "Điểm trung bình bài kiểm tra",
+    "studyStreak": "Chuỗi học tập",
+    "days": "ngày",
+    "unitProgress": "Tiến độ theo mục",
+    "scoreTrend": "Xu hướng điểm số",
+    "calendar": "Lịch học tập",
+    "calendarHint": "Theo dõi thói quen học tập hàng ngày của bạn"
+  },
+  "achievements": {
+    "badges": "Huy hiệu của bạn",
+    "recent": "Những thành tựu gần đây",
+    "certificate": "Xem trước chứng chỉ",
+    "download": "Tải xuống chứng chỉ"
+  },
+  "community": {
+    "title": "Cộng đồng",
+    "placeholder": "Hãy chia sẻ hành trình học tập của bạn...",
+    "empty": "Chưa có bài đăng nào. Hãy là người đầu tiên chia sẻ!"
+  },
+  "settings": {
+    "title": "Cài đặt",
+    "profile": "Hồ sơ",
+    "name": "Tên",
+    "email": "E-mail",
+    "language": "Ngôn ngữ",
+    "savingLanguage": "(đang lưu...)"
+  },
+  "menu": {
+    "app": "Ứng dụng",
+    "course": "Khóa học",
+    "continueLessons": "Tiếp tục bài học",
+    "myProgress": "Tiến trình của tôi",
+    "noLessons": "Hiện chưa có bài học nào. Hãy bắt đầu từ mục \"Tôi đang học\"."
+  },
+  "logo": {
+    "tagline": "Tâm lý học đại cương"
+  }
+}

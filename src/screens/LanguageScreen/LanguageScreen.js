@@ -1,36 +1,47 @@
 import { useState } from 'react';
 import { View, Text } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
 import OnboardingLayout from '../../components/OnboardingLayout/OnboardingLayout';
 import OnboardingHeader from '../../components/OnboardingHeader/OnboardingHeader';
 import LanguageListItem from '../../components/LanguageListItem/LanguageListItem';
 import PrimaryButton from '../../components/PrimaryButton/PrimaryButton';
-import { styles as headerStyles } from '../../components/OnboardingHeader/OnboardingHeader.styles';
+import { useAuth } from '../../context/AuthContext';
+import { useLocale } from '../../context/LocaleContext';
 import { languages } from '../../data/languages';
-import { colors } from '../../theme/colors';
 import { styles } from './LanguageScreen.styles';
 
 export default function LanguageScreen({ navigation }) {
-  const [selected, setSelected] = useState('en');
+  const { updateProfile, setOnboardingDraft } = useAuth();
+  const { locale, setLocale, t } = useLocale();
+  const [selected, setSelected] = useState(locale || 'en');
+  const [saving, setSaving] = useState(false);
+
+  const handleContinue = async () => {
+    if (saving) return;
+    setSaving(true);
+    try {
+      await setLocale(selected);
+      setOnboardingDraft((prev) => ({ ...prev, language: selected }));
+      // Persist once so onboarding resume skips this screen.
+      await updateProfile({ language: selected });
+      navigation.navigate('Goal');
+    } finally {
+      setSaving(false);
+    }
+  };
 
   return (
     <OnboardingLayout
       footer={
         <PrimaryButton
-          label="Continue"
-          onPress={() => navigation.navigate('CreateAccount')}
+          label={saving ? t('common.pleaseWait') : t('common.continue')}
+          onPress={handleContinue}
+          disabled={saving}
         />
       }
     >
       <OnboardingHeader
-        title="Choose Your Language"
-        subtitle="Please select your preferred language"
-        onBack={() => navigation.goBack()}
-        topIcon={
-          <View style={headerStyles.iconCircle}>
-            <Ionicons name="globe-outline" size={30} color={colors.primary} />
-          </View>
-        }
+        title={t('language.title')}
+        subtitle={t('language.subtitle')}
       />
 
       <View style={styles.listCard}>
@@ -44,7 +55,7 @@ export default function LanguageScreen({ navigation }) {
           />
         ))}
       </View>
-      <Text style={styles.hint}>You can change this later in settings</Text>
+      <Text style={styles.hint}>{t('language.hint')}</Text>
     </OnboardingLayout>
   );
 }

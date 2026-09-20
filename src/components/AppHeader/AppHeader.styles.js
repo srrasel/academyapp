@@ -9,6 +9,15 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingVertical: spacing.sm,
     marginBottom: spacing.md,
+    minHeight: 108,
+  },
+  backRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingVertical: spacing.xs,
+    marginBottom: spacing.sm,
+    minHeight: 44,
   },
   iconBtn: {
     width: 40,
@@ -20,19 +29,25 @@ export const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
   },
-  logoText: {
-    fontSize: 13,
-    fontWeight: '700',
-    letterSpacing: 1,
-    color: colors.primary,
+  headerLogo: {
+    width: 360,
+    height: 100,
+    maxWidth: '100%',
   },
-  title: {
+  screenTitle: {
+    flex: 1,
     fontSize: 22,
     fontWeight: '700',
     color: colors.text,
   },
+  backTitle: {
+    flex: 1,
+    fontSize: 18,
+    fontWeight: '700',
+    color: colors.text,
+    marginLeft: spacing.xs,
+  },
   right: {
     width: 40,
-    alignItems: 'flex-end',
   },
 });

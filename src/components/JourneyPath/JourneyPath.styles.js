@@ -1,68 +1,88 @@
 import { StyleSheet } from 'react-native';
 import { colors } from '../../theme/colors';
-import { spacing } from '../../theme/spacing';
+import { radius } from '../../theme/spacing';
 
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    paddingVertical: spacing.lg,
+    position: 'relative',
+    overflow: 'hidden',
   },
-  pathLine: {
+  svg: {
+    ...StyleSheet.absoluteFillObject,
+  },
+  milestone: {
     position: 'absolute',
-    left: '50%',
-    marginLeft: -2,
-    top: '8%',
-    bottom: '12%',
-    width: 4,
-    backgroundColor: 'rgba(255,255,255,0.35)',
-    borderRadius: 2,
-  },
-  milestones: {
-    flex: 1,
-    justifyContent: 'space-between',
-    paddingVertical: spacing.md,
-  },
-  milestoneRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingHorizontal: spacing.sm,
+    zIndex: 2,
   },
-  milestoneRowRight: {
-    flexDirection: 'row-reverse',
+  milestoneFlip: {
+    flexDirection: 'row',
   },
-  node: {
-    width: 48,
-    height: 48,
-    borderRadius: 24,
+  pinOuter: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'rgba(255,255,255,0.2)',
+  },
+  pin: {
     alignItems: 'center',
     justifyContent: 'center',
     borderWidth: 3,
     borderColor: colors.white,
+    shadowColor: '#0F172A',
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.3,
+    shadowRadius: 5,
+    elevation: 6,
   },
-  nodeBlue: {
+  pinBlue: {
     backgroundColor: colors.primary,
   },
-  nodeGold: {
-    backgroundColor: colors.gold,
+  pinGold: {
+    backgroundColor: colors.navy,
   },
-  nodeText: {
+  pinText: {
     color: colors.white,
-    fontSize: 16,
+    fontSize: 17,
     fontWeight: '700',
   },
-  labelBox: {
-    flex: 1,
-    marginHorizontal: spacing.md,
-    backgroundColor: 'rgba(255,255,255,0.92)',
-    paddingVertical: spacing.sm,
-    paddingHorizontal: spacing.md,
-    borderRadius: 10,
+  labelPill: {
+    marginLeft: 8,
+    marginRight: 0,
+    paddingVertical: 7,
+    paddingHorizontal: 10,
+    borderRadius: radius.sm,
+    backgroundColor: 'rgba(255,255,255,0.9)',
+    borderWidth: 1,
+    borderColor: 'rgba(255,255,255,0.65)',
+    shadowColor: '#0F172A',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 6,
+    elevation: 3,
   },
-  label: {
-    fontSize: 13,
-    fontWeight: '600',
+  labelPillFlip: {
+    marginLeft: 0,
+    marginRight: 8,
+  },
+  labelPillDark: {
+    backgroundColor: 'rgba(255,255,255,0.96)',
+    borderColor: 'rgba(0,0,0,0.05)',
+  },
+  labelText: {
+    fontSize: 12,
+    fontWeight: '700',
     color: colors.text,
-    textAlign: 'center',
+    lineHeight: 16,
+    textAlign: 'left',
+  },
+  labelTextSecond: {
+    marginTop: 1,
+    fontWeight: '600',
+    color: colors.textMuted,
+  },
+  labelTextDark: {
+    color: colors.navy,
   },
 });

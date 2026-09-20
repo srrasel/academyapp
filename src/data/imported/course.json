@@ -1,0 +1,23 @@
+{
+  "id": "general-psychology",
+  "wpCourseId": 6382,
+  "title": "Life Coach Base Course – General Psychology",
+  "subtitle": "General Psychology — Bridge Academy",
+  "description": "The prerequisite course helps you grasp basic principles of human thinking, emotions and behavior. 20 structured units with audio, visuals, videos and interactive quizzes.",
+  "stats": {
+    "units": 20,
+    "lessons": 199,
+    "hours": "25-30",
+    "quizzes": 73,
+    "lectures": 126
+  },
+  "totalUnits": 20,
+  "learnings": [
+    "History of Psychology in Coaching",
+    "How the Brain Works",
+    "Understanding Personality",
+    "Common Emotional and Mental Health Challenges",
+    "Coaching vs. Therapy"
+  ],
+  "sourceUrl": "https://bridge-academy.vn/en/courses-3/general-course/"
+}

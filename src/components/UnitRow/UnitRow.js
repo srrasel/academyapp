@@ -1,36 +1,79 @@
 import { View, Text, Pressable } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { getUnitDisplayNumber, getUnitDisplayTitle } from '../../utils/courseUnits';
 import { colors } from '../../theme/colors';
 import { styles } from './UnitRow.styles';
 
 function StatusIcon({ status }) {
   if (status === 'completed') {
-    return <Ionicons name="checkmark-circle" size={24} color={colors.success} />;
+    return <Ionicons name="checkmark-circle" size={22} color={colors.success} />;
   }
   if (status === 'locked') {
-    return <Ionicons name="lock-closed" size={20} color={colors.locked} />;
+    return <Ionicons name="lock-closed" size={18} color={colors.locked} />;
   }
   if (status === 'in_progress') {
-    return <Ionicons name="ellipse-outline" size={24} color={colors.primary} />;
+    return <View style={styles.progressDot} />;
   }
-  return <Ionicons name="ellipse-outline" size={24} color={colors.border} />;
+  if (status === 'unlocked') {
+    return <View style={styles.emptyDot} />;
+  }
+  return <View style={styles.emptyDot} />;
 }
 
-export default function UnitRow({ unit, onPress }) {
+export default function UnitRow({ unit, onPress, showDivider = true, isActive = false }) {
   const isLocked = unit.status === 'locked';
+  const isInProgress = unit.status === 'in_progress';
+  const isCompleted = unit.status === 'completed';
+  const highlight = isActive || isInProgress;
 
   return (
-    <Pressable style={styles.row} onPress={onPress} disabled={isLocked}>
-      <View style={[styles.number, isLocked && styles.numberLocked]}>
-        <Text style={styles.numberText}>{unit.id}</Text>
-      </View>
-      <View style={styles.info}>
-        <Text style={styles.title}>{unit.title}</Text>
-        <Text style={styles.progress}>
-          {unit.completed}/{unit.total}
+    <Pressable
+      style={[
+        styles.row,
+        highlight && styles.rowActive,
+        showDivider && !highlight && styles.rowDivider,
+      ]}
+      onPress={onPress}
+      disabled={isLocked}
+    >
+      <View
+        style={[
+          styles.number,
+          isLocked && styles.numberLocked,
+          highlight && styles.numberActive,
+        ]}
+      >
+        <Text
+          style={[
+            styles.numberText,
+            isLocked && styles.numberTextLocked,
+            highlight && styles.numberTextActive,
+          ]}
+        >
+          {getUnitDisplayNumber(unit)}
         </Text>
       </View>
-      <View style={styles.status}>
+      <Text
+        style={[
+          styles.title,
+          isLocked && styles.titleLocked,
+          highlight && styles.titleActive,
+        ]}
+        numberOfLines={2}
+      >
+        {getUnitDisplayTitle(unit)}
+      </Text>
+      <View style={styles.right}>
+        <Text
+          style={[
+            styles.progress,
+            highlight && styles.progressActive,
+            isCompleted && styles.progressDone,
+            isLocked && styles.progressLocked,
+          ]}
+        >
+          {unit.completed}/{unit.total}
+        </Text>
         <StatusIcon status={unit.status} />
       </View>
     </Pressable>

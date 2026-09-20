@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.primary,
     paddingVertical: spacing.md + 2,
     paddingHorizontal: spacing.lg,
-    borderRadius: radius.sm,
+    borderRadius: radius.md,
     alignItems: 'center',
     justifyContent: 'center',
     minHeight: 52,

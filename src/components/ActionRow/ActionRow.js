@@ -4,17 +4,21 @@ import { colors } from '../../theme/colors';
 import { styles } from './ActionRow.styles';
 
 const ACTIONS = [
-  { icon: 'download-outline', label: 'Download' },
-  { icon: 'create-outline', label: 'Add Note' },
-  { icon: 'share-outline', label: 'Share' },
-  { icon: 'ellipsis-horizontal', label: 'More' },
+  { key: 'download', icon: 'download-outline', label: 'Download' },
+  { key: 'note', icon: 'create-outline', label: 'Add Note' },
+  { key: 'share', icon: 'share-outline', label: 'Share' },
+  { key: 'more', icon: 'ellipsis-horizontal', label: 'More' },
 ];
 
-export default function ActionRow() {
+export default function ActionRow({ onAction, style }) {
   return (
-    <View style={styles.row}>
+    <View style={[styles.row, style]}>
       {ACTIONS.map((action) => (
-        <Pressable key={action.label} style={styles.item}>
+        <Pressable
+          key={action.key}
+          style={styles.item}
+          onPress={() => onAction?.(action.key)}
+        >
           <Ionicons name={action.icon} size={22} color={colors.primary} />
           <Text style={styles.label}>{action.label}</Text>
         </Pressable>

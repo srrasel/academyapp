@@ -27,6 +27,18 @@ export const styles = StyleSheet.create({
     fontWeight: '600',
     color: colors.success,
   },
+  chartWrap: {
+    marginBottom: spacing.sm,
+    minHeight: 80,
+    justifyContent: 'center',
+  },
+  emptyChart: {
+    fontSize: 13,
+    lineHeight: 20,
+    color: colors.textMuted,
+    textAlign: 'center',
+    paddingVertical: spacing.md,
+  },
   chart: {
     flexDirection: 'row',
     alignItems: 'flex-end',

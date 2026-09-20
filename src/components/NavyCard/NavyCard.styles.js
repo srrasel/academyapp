@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
 import { colors } from '../../theme/colors';
 import { radius, spacing } from '../../theme/spacing';
+import { shadows } from '../../theme/shadows';
 
 export const styles = StyleSheet.create({
   card: {
@@ -8,35 +9,45 @@ export const styles = StyleSheet.create({
     borderRadius: radius.lg,
     padding: spacing.lg,
     marginBottom: spacing.lg,
+    ...shadows.card,
   },
   row: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: spacing.md,
   },
+  stackedRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginTop: spacing.sm,
+  },
   content: {
     flex: 1,
   },
   label: {
-    fontSize: 12,
-    color: 'rgba(255,255,255,0.7)',
+    fontSize: 13,
+    fontWeight: '600',
+    color: 'rgba(255,255,255,0.85)',
     marginBottom: spacing.xs,
   },
   title: {
     fontSize: 16,
     fontWeight: '700',
     color: colors.white,
-    marginBottom: spacing.sm,
+    marginBottom: spacing.xs,
   },
   subtitle: {
     fontSize: 13,
-    color: 'rgba(255,255,255,0.85)',
+    color: 'rgba(255,255,255,0.8)',
     marginBottom: spacing.md,
+    lineHeight: 18,
   },
   meta: {
-    fontSize: 12,
+    fontSize: 13,
     color: 'rgba(255,255,255,0.75)',
-    marginBottom: spacing.sm,
+    flex: 1,
+    paddingRight: spacing.md,
   },
   smallBtn: {
     alignSelf: 'flex-start',
@@ -44,9 +55,10 @@ export const styles = StyleSheet.create({
     paddingVertical: spacing.sm,
     paddingHorizontal: spacing.md,
     borderRadius: radius.pill,
+    marginTop: spacing.sm,
   },
   smallBtnText: {
-    fontSize: 12,
+    fontSize: 13,
     fontWeight: '600',
     color: colors.navy,
   },

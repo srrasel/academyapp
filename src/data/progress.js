@@ -1,21 +1,16 @@
 export const progressStats = {
-  percent: 35,
-  unitsCompleted: 7,
+  percent: 0,
+  unitsCompleted: 0,
   totalUnits: 20,
-  lessonsCompleted: 35,
+  lessonsCompleted: 0,
   totalLessons: 100,
-  hoursStudied: '24h 30m',
-  averageScore: 85,
-  scoreTrend: '+12% vs last month',
-  streak: 12,
-  monthlyStudyTime: '24h 30m',
+  hoursStudied: '0h 0m',
+  averageScore: 0,
+  scoreTrend: '',
+  streak: 0,
+  monthlyStudyTime: '0h 0m',
 };
 
-export const scoreTrendData = [72, 78, 75, 82, 80, 88, 85];
+export const scoreTrendData = [];
 
-export const unitProgressList = [
-  { id: 7, title: 'Understanding Trauma', percent: 80 },
-  { id: 3, title: 'Communication Skills', percent: 100 },
-  { id: 2, title: 'Ethics & Professional Standards', percent: 100 },
-  { id: 6, title: 'Building Rapport', percent: 60 },
-];
+export const unitProgressList = [];

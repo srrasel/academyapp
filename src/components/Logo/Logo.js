@@ -1,11 +1,13 @@
 import { View, Text, Image } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { useLocale } from '../../context/LocaleContext';
 import { colors } from '../../theme/colors';
 import { styles } from './Logo.styles';
 
 const logoImage = require('../../../assets/logo.png');
 
 export default function Logo({ variant = 'dark', imageOnly = false }) {
+  const { t } = useLocale();
   const isLight = variant === 'light';
 
   if (imageOnly) {
@@ -27,7 +29,7 @@ export default function Logo({ variant = 'dark', imageOnly = false }) {
       </View>
       <Text style={[styles.title, isLight && styles.titleLight]}>BRIDGE ACADEMY</Text>
       <Text style={[styles.tagline, isLight && styles.taglineLight]}>
-        Become a Life Coach
+        {t('logo.tagline')}
       </Text>
     </View>
   );

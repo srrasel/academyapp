@@ -1,13 +1,14 @@
 import { View, Pressable, Text } from 'react-native';
-import { Ionicons, AntDesign } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
 import { colors } from '../../theme/colors';
+import GoogleIcon from './GoogleIcon';
 import { styles } from './SocialButton.styles';
 
 const PROVIDERS = {
   google: {
     label: 'Continue with Google',
     badgeStyle: styles.iconBadgeGoogle,
-    Icon: () => <AntDesign name="google" size={22} color="#4285F4" />,
+    Icon: () => <GoogleIcon size={22} />,
   },
   apple: {
     label: 'Continue with Apple',
@@ -21,14 +22,19 @@ const PROVIDERS = {
   },
 };
 
-export default function SocialButton({ provider, onPress, showChevron = true }) {
+export default function SocialButton({ provider, onPress, showChevron = true, disabled = false }) {
   const config = PROVIDERS[provider];
   const { Icon, badgeStyle, label } = config;
 
   return (
     <Pressable
       onPress={onPress}
-      style={({ pressed }) => [styles.button, pressed && { opacity: 0.92 }]}
+      disabled={disabled}
+      style={({ pressed }) => [
+        styles.button,
+        disabled && { opacity: 0.5 },
+        pressed && !disabled && { opacity: 0.92 },
+      ]}
     >
       <View style={[styles.iconBadge, badgeStyle]}>
         <Icon />

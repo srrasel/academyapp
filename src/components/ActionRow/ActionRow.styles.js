@@ -6,9 +6,11 @@ export const styles = StyleSheet.create({
   row: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    paddingVertical: spacing.lg,
+    paddingVertical: spacing.md,
+    paddingHorizontal: spacing.sm,
     borderTopWidth: 1,
     borderTopColor: colors.border,
+    backgroundColor: colors.white,
   },
   item: {
     alignItems: 'center',

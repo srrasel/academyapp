@@ -5,21 +5,27 @@ export const styles = StyleSheet.create({
   root: {
     flex: 1,
   },
+  backgroundImage: {
+    transform: [{ translateY: -48 }],
+    height: '112%',
+  },
   background: {
     flex: 1,
-    justifyContent: 'space-between',
-  },
-  gradient: {
-    ...StyleSheet.absoluteFillObject,
   },
   topSection: {
     alignItems: 'center',
-    paddingTop: spacing.xxl,
+    paddingTop: spacing.xl,
     paddingHorizontal: spacing.lg,
+  },
+  spacer: {
+    flex: 1,
+    minHeight: spacing.xxl,
   },
   bottomContent: {
     paddingHorizontal: spacing.lg,
     gap: spacing.md,
+    paddingTop: spacing.md,
+    transform: [{ translateY: 20 }],
   },
   headline: {
     color: '#FFFFFF',

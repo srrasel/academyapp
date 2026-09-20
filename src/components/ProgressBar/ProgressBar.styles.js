@@ -4,7 +4,7 @@ import { radius } from '../../theme/spacing';
 
 export const styles = StyleSheet.create({
   track: {
-    height: 6,
+    height: 8,
     backgroundColor: colors.border,
     borderRadius: radius.full,
     overflow: 'hidden',

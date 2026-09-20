@@ -1,29 +1,39 @@
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import OnboardingStack from './OnboardingStack';
-import MainTabNavigator from './MainTabNavigator';
-import CourseOverviewScreen from '../screens/CourseOverviewScreen/CourseOverviewScreen';
-import UnitListScreen from '../screens/UnitListScreen/UnitListScreen';
-import UnitDetailScreen from '../screens/UnitDetailScreen/UnitDetailScreen';
-import LessonVideoScreen from '../screens/LessonVideoScreen/LessonVideoScreen';
-import LessonAudioScreen from '../screens/LessonAudioScreen/LessonAudioScreen';
-import QuizScreen from '../screens/QuizScreen/QuizScreen';
+import LoadingScreen from '../components/LoadingScreen/LoadingScreen';
+import { useAuth } from '../context/AuthContext';
+import { MenuProvider } from '../context/MenuContext';
+import AuthStack from './AuthStack';
+import OnboardingResumeStack from './OnboardingResumeStack';
+import MainAppStack from './MainAppStack';
 
-const Stack = createNativeStackNavigator();
+function getResumeInitialRoute(profile) {
+  // Language is chosen once after signup; skip if already saved.
+  return profile?.language ? 'Goal' : 'Language';
+}
 
 export default function RootNavigator() {
+  const { user, profile, loading } = useAuth();
+
+  if (loading) {
+    return <LoadingScreen />;
+  }
+
+  const onboardingComplete = Boolean(profile?.onboardingComplete);
+
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="Onboarding" component={OnboardingStack} />
-        <Stack.Screen name="MainTabs" component={MainTabNavigator} />
-        <Stack.Screen name="CourseOverview" component={CourseOverviewScreen} />
-        <Stack.Screen name="UnitList" component={UnitListScreen} />
-        <Stack.Screen name="UnitDetail" component={UnitDetailScreen} />
-        <Stack.Screen name="LessonVideo" component={LessonVideoScreen} />
-        <Stack.Screen name="LessonAudio" component={LessonAudioScreen} />
-        <Stack.Screen name="Quiz" component={QuizScreen} />
-      </Stack.Navigator>
+      <MenuProvider>
+        {!user ? (
+          <AuthStack />
+        ) : !onboardingComplete ? (
+          <OnboardingResumeStack
+            key={user.uid}
+            initialRouteName={getResumeInitialRoute(profile)}
+          />
+        ) : (
+          <MainAppStack />
+        )}
+      </MenuProvider>
     </NavigationContainer>
   );
 }

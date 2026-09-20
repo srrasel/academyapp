@@ -1,0 +1,25 @@
+{
+  "id": "general-psychology",
+  "wpCourseId": 6382,
+  "title": "人生教练基础课程——普通心理学",
+  "subtitle": "普通心理学——桥梁学院",
+  "description": "这门预备课程帮助你掌握人类思维、情感和行为的基本原理。课程包含20个结构化的单元，配有音频、图片、视频和互动测验。",
+  "stats": {
+    "units": 20,
+    "lessons": 199,
+    "hours": "25-30",
+    "quizzes": 73,
+    "lectures": 126
+  },
+  "totalUnits": 20,
+  "learnings": [
+    "教练心理学史",
+    "大脑是如何运作的",
+    "了解人格",
+    "常见的情绪和心理健康挑战",
+    "教练辅导与心理治疗"
+  ],
+  "sourceUrl": "https://bridge-academy.vn/en/courses-3/general-course/",
+  "_translated": true,
+  "_locale": "zh"
+}

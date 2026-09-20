@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
 import { colors } from '../../theme/colors';
 import { radius, spacing } from '../../theme/spacing';
+import { shadows } from '../../theme/shadows';
 
 export const styles = StyleSheet.create({
   scroll: {
@@ -11,22 +12,19 @@ export const styles = StyleSheet.create({
     paddingHorizontal: spacing.lg,
     paddingBottom: 100,
   },
-  title: {
-    fontSize: 24,
-    fontWeight: '700',
-    color: colors.text,
-  },
   subtitle: {
     fontSize: 14,
     color: colors.textMuted,
-    marginTop: spacing.xs,
+    marginTop: -spacing.sm,
     marginBottom: spacing.lg,
+    lineHeight: 20,
   },
   hero: {
     height: 200,
     borderRadius: radius.lg,
     overflow: 'hidden',
     marginBottom: spacing.lg,
+    ...shadows.card,
   },
   heroImage: {
     width: '100%',
@@ -36,10 +34,19 @@ export const styles = StyleSheet.create({
     ...StyleSheet.absoluteFillObject,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'rgba(0,0,0,0.2)',
+    backgroundColor: 'rgba(0,0,0,0.25)',
+  },
+  playCircle: {
+    width: 64,
+    height: 64,
+    borderRadius: 32,
+    backgroundColor: 'rgba(15,42,110,0.85)',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   statsRow: {
     flexDirection: 'row',
+    alignItems: 'center',
     justifyContent: 'space-around',
     marginBottom: spacing.lg,
     paddingVertical: spacing.md,
@@ -47,17 +54,23 @@ export const styles = StyleSheet.create({
     borderRadius: radius.md,
   },
   stat: {
+    flex: 1,
     alignItems: 'center',
   },
+  statDivider: {
+    width: 1,
+    height: 32,
+    backgroundColor: colors.border,
+  },
   statValue: {
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: '700',
     color: colors.primary,
   },
   statLabel: {
     fontSize: 12,
     color: colors.textMuted,
-    marginTop: 2,
+    marginTop: 4,
   },
   description: {
     fontSize: 14,
@@ -82,15 +95,5 @@ export const styles = StyleSheet.create({
     fontSize: 14,
     color: colors.text,
     lineHeight: 20,
-  },
-  footer: {
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    right: 0,
-    padding: spacing.lg,
-    backgroundColor: colors.white,
-    borderTopWidth: 1,
-    borderTopColor: colors.border,
   },
 });

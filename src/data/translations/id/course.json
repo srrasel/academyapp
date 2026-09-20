@@ -1,0 +1,25 @@
+{
+  "id": "general-psychology",
+  "wpCourseId": 6382,
+  "title": "Kursus Dasar Pelatih Kehidupan – Psikologi Umum",
+  "subtitle": "Psikologi Umum — Akademi Jembatan",
+  "description": "Kursus prasyarat ini membantu Anda memahami prinsip-prinsip dasar pemikiran, emosi, dan perilaku manusia. Terdiri dari 20 unit terstruktur dengan audio, visual, video, dan kuis interaktif.",
+  "stats": {
+    "units": 20,
+    "lessons": 199,
+    "hours": "25-30",
+    "quizzes": 73,
+    "lectures": 126
+  },
+  "totalUnits": 20,
+  "learnings": [
+    "Sejarah Psikologi dalam Kepelatihan",
+    "Bagaimana Otak Bekerja",
+    "Memahami Kepribadian",
+    "Tantangan Umum dalam Kesehatan Emosional dan Mental",
+    "Pembinaan vs. Terapi"
+  ],
+  "sourceUrl": "https://bridge-academy.vn/en/courses-3/general-course/",
+  "_translated": true,
+  "_locale": "id"
+}

@@ -11,13 +11,14 @@ export default function OnboardingHeader({
   topIcon,
   variant = 'light',
   align = 'center',
+  compact = false,
 }) {
   const isLight = variant === 'light';
   const isOverlay = variant === 'dark';
   const isLeft = align === 'left';
 
   return (
-    <View style={[styles.wrap, isLeft && styles.wrapLeft]}>
+    <View style={[styles.wrap, isLeft && styles.wrapLeft, compact && styles.wrapCompact]}>
       <View style={styles.navRow}>
         {onBack ? (
           <Pressable
@@ -44,7 +45,7 @@ export default function OnboardingHeader({
         <Text
           style={[
             styles.title,
-            isLeft && styles.titleLeft,
+            isLeft && (compact ? styles.titleLeftCompact : styles.titleLeft),
             !isLight && styles.titleLight,
           ]}
         >
@@ -56,6 +57,7 @@ export default function OnboardingHeader({
           style={[
             styles.subtitle,
             isLeft && styles.subtitleLeft,
+            compact && styles.subtitleCompact,
             !isLight && styles.subtitleLight,
           ]}
         >

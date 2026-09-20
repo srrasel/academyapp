@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     marginBottom: spacing.md,
-    marginTop: spacing.lg,
+    marginTop: spacing.md,
   },
   title: {
     fontSize: 17,

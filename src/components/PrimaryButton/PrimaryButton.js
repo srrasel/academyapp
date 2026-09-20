@@ -6,14 +6,18 @@ export default function PrimaryButton({ label, onPress, disabled, style }) {
     <Pressable
       onPress={onPress}
       disabled={disabled}
+      accessibilityRole="button"
+      accessibilityState={{ disabled }}
       style={({ pressed }) => [
         styles.button,
         disabled && styles.buttonDisabled,
-        pressed && { opacity: 0.9 },
+        pressed && !disabled && { opacity: 0.9 },
         style,
       ]}
     >
-      <Text style={styles.label}>{label}</Text>
+      <Text pointerEvents="none" style={styles.label}>
+        {label}
+      </Text>
     </Pressable>
   );
 }

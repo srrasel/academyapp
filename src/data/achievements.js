@@ -1,3 +1,13 @@
+export const CERTIFICATE_PDF_URL =
+  'https://bridge-academy.vn/wp-content/uploads/2025/10/CERTIFICATE.pdf';
+
+export const CERTIFICATE_PDF_URL_VI =
+  'https://bridge-academy.vn/wp-content/uploads/2025/08/CERTIFICATE-1-VN.pdf';
+
+export function getCertificatePdfUrl(locale = 'en') {
+  return locale === 'vi' ? CERTIFICATE_PDF_URL_VI : CERTIFICATE_PDF_URL;
+}
+
 export const badges = [
   { id: 1, label: 'First Step', color: '#3B82F6', icon: 'flag' },
   { id: 2, label: '7 Day Streak', color: '#F59E0B', icon: 'flame' },
@@ -31,7 +41,7 @@ export const recentAchievements = [
 
 export const certificate = {
   recipient: 'Sarah Johnson',
-  course: 'Become a Life Coach',
+  course: 'Life Coach Base Course – General Psychology',
   academy: 'Bridge Academy',
-  date: 'May 2026',
+  date: 'May 20, 2026',
 };

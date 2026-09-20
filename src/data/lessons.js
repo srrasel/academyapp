@@ -26,7 +26,8 @@ export const audioLesson = {
   speed: '1.0x',
   upNext: {
     title: 'Healing Pathways',
-    duration: '14 min',
+    subunit: 'Subunit 4 of 5',
+    duration: '20:15',
   },
 };
 
@@ -37,11 +38,11 @@ export const quizData = {
   question: 'Which of the following is a common response to trauma?',
   options: [
     { id: 'A', text: 'Immediate complete recovery without support' },
-    { id: 'B', text: 'Hypervigilance and heightened stress response', correct: true },
+    { id: 'B', text: 'Emotional numbness', correct: true },
     { id: 'C', text: 'Complete loss of all emotional capacity' },
     { id: 'D', text: 'Only physical symptoms, never emotional' },
   ],
   explanation:
-    'Hypervigilance is a common trauma response where the nervous system stays on high alert to protect against perceived threats.',
+    'Emotional numbness is a common response to trauma as a way to cope with overwhelming emotions.',
   selectedId: 'B',
 };

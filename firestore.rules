@@ -1,0 +1,87 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return isSignedIn()
+        && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    match /users/{userId} {
+      allow read: if isOwner(userId) || isAdmin();
+      allow create: if isOwner(userId) || isAdmin();
+      allow update: if isOwner(userId) || isAdmin();
+      allow delete: if isAdmin();
+
+      match /meta/{docId} {
+        allow read, write: if isOwner(userId) || isAdmin();
+      }
+    }
+
+    match /courses/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /units/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /lessons/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /appConfig/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /communityPosts/{docId} {
+      allow read: if true;
+      allow create: if isSignedIn();
+      // Authors/admins can edit posts; any signed-in member can update likes/reactions/commentCount.
+      allow update: if isAdmin()
+        || (isSignedIn() && request.auth.uid == resource.data.userId)
+        || (isSignedIn()
+          && request.resource.data.diff(resource.data).affectedKeys()
+              .hasOnly(['likes', 'reactions', 'commentCount']));
+      allow delete: if isAdmin()
+        || (isSignedIn() && request.auth.uid == resource.data.userId);
+
+      match /comments/{commentId} {
+        allow read: if true;
+        allow create: if isSignedIn()
+          && request.resource.data.userId == request.auth.uid
+          && request.resource.data.content is string
+          && request.resource.data.content.size() > 0
+          && request.resource.data.content.size() < 2000;
+        allow update: if isAdmin()
+          || (isSignedIn() && request.auth.uid == resource.data.userId)
+          || (isSignedIn()
+            && request.resource.data.diff(resource.data).affectedKeys()
+                .hasOnly(['likes', 'dislikes']));
+        allow delete: if isAdmin()
+          || (isSignedIn() && request.auth.uid == resource.data.userId);
+      }
+    }
+
+    match /translations/{locale} {
+      allow read: if true;
+      allow write: if isAdmin();
+
+      match /bundles/{bundleId} {
+        allow read: if true;
+        allow write: if isAdmin();
+      }
+    }
+  }
+}

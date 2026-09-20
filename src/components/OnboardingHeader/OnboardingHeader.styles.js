@@ -10,11 +10,14 @@ export const styles = StyleSheet.create({
   wrapLeft: {
     paddingBottom: spacing.xl,
   },
+  wrapCompact: {
+    paddingBottom: spacing.md,
+  },
   navRow: {
     flexDirection: 'row',
     alignItems: 'center',
     minHeight: 44,
-    marginBottom: spacing.sm,
+    marginBottom: spacing.xs,
   },
   backButton: {
     width: 40,
@@ -49,7 +52,7 @@ export const styles = StyleSheet.create({
     ...shadows.sm,
   },
   title: {
-    fontSize: 26,
+    fontSize: 22,
     fontWeight: '700',
     color: colors.text,
     textAlign: 'center',
@@ -62,12 +65,19 @@ export const styles = StyleSheet.create({
     fontSize: 28,
     marginTop: spacing.md,
   },
+  titleLeftCompact: {
+    textAlign: 'left',
+    paddingHorizontal: 0,
+    fontSize: 26,
+    marginTop: spacing.xs,
+    letterSpacing: -0.5,
+  },
   titleLight: {
     color: colors.white,
   },
   subtitle: {
     marginTop: spacing.sm,
-    fontSize: 15,
+    fontSize: 14,
     color: colors.textMuted,
     textAlign: 'center',
     lineHeight: 22,
@@ -79,12 +89,16 @@ export const styles = StyleSheet.create({
     marginTop: spacing.sm,
     lineHeight: 24,
   },
+  subtitleCompact: {
+    marginTop: spacing.xs,
+    lineHeight: 22,
+  },
   subtitleLight: {
     color: 'rgba(255,255,255,0.92)',
   },
   statsBar: {
     marginTop: spacing.sm,
-    fontSize: 13,
+    fontSize: 12,
     color: colors.textMuted,
     textAlign: 'center',
     paddingHorizontal: spacing.lg,

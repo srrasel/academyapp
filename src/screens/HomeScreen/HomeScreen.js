@@ -1,4 +1,4 @@
-import { ScrollView, View, Text, Image, Pressable } from 'react-native';
+import { ScrollView, View, Text, Image } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useTabBarPadding } from '../../hooks/useTabBarPadding';
 import { Ionicons } from '@expo/vector-icons';
@@ -7,76 +7,104 @@ import NavyCard from '../../components/NavyCard/NavyCard';
 import ProgressBar from '../../components/ProgressBar/ProgressBar';
 import PrimaryButton from '../../components/PrimaryButton/PrimaryButton';
 import SectionHeader from '../../components/SectionHeader/SectionHeader';
-import { course, currentUnit, quoteOfDay, nextCourse } from '../../data/course';
+import AdBanner from '../../components/AdBanner/AdBanner';
+import { useLocale } from '../../context/LocaleContext';
+import { useCourse } from '../../context/CourseContext';
+import { useMenu } from '../../context/MenuContext';
+import { useAuth } from '../../context/AuthContext';
+import { useMembership } from '../../hooks/useMembership';
+import { showNotifications } from '../../utils/notifications';
+import { buildProgressStats } from '../../services/progressService';
+import { getUnitDisplayNumber, getUnitDisplayTitle } from '../../utils/courseUnits';
+import { getQuoteOfDay } from '../../data/quotes';
 import { images } from '../../data/images';
 import { colors } from '../../theme/colors';
 import { styles } from './HomeScreen.styles';
 
 export default function HomeScreen({ navigation }) {
-  const unitProgress = Math.round((currentUnit.completed / currentUnit.total) * 100);
+  const { t, locale } = useLocale();
+  const { profile } = useAuth();
+  const { openMenu } = useMenu();
+  const { features } = useMembership();
+  const { course, currentUnit, progress, units } = useCourse();
+  const stats = buildProgressStats(course, units, progress);
+  const safeUnit = currentUnit ?? { id: '2', displayNumber: 1, completed: 0, total: 1 };
+  const unitDisplayNumber = getUnitDisplayNumber(safeUnit);
+  const unitProgress = safeUnit.total
+    ? Math.round((safeUnit.completed / safeUnit.total) * 100)
+    : 0;
   const bottomPad = useTabBarPadding();
+  const name = profile?.displayName?.split(' ')[0] || 'Sarah';
+  const quote = getQuoteOfDay(locale);
 
   return (
-    <SafeAreaView style={styles.scroll} edges={['top']}>
+    <SafeAreaView style={styles.safe} edges={['top']}>
       <ScrollView contentContainerStyle={[styles.content, { paddingBottom: bottomPad }]}>
-        <AppHeader />
-        <Text style={styles.greeting}>Hello, Sarah 👋</Text>
-        <Text style={styles.subGreeting}>Keep going! You're doing great.</Text>
+        <AppHeader onMenuPress={openMenu} onNotificationsPress={showNotifications} />
+        <Text style={styles.greeting}>{t('home.greeting', { name })}</Text>
+        <Text style={styles.subGreeting}>
+          {stats.percent > 0
+            ? t('home.subGreeting')
+            : t('home.subGreetingStart')}
+        </Text>
 
         <NavyCard
-          label="Main Course Progress"
-          subtitle={`You've completed ${course.completedUnits} of ${course.totalUnits} units`}
-          percent={course.progress}
-          buttonLabel="Continue Unit 7"
+          label={t('home.mainProgress')}
+          subtitle={t('home.unitsCompleted', {
+            completed: stats.unitsCompleted,
+            total: stats.totalUnits,
+          })}
+          percent={stats.percent}
+          buttonLabel={t('home.continueUnit', { id: unitDisplayNumber })}
           onButtonPress={() =>
-            navigation.navigate('UnitDetail', { unitId: currentUnit.id })
+            navigation.navigate('UnitDetail', { unitId: safeUnit.id })
           }
         />
 
-        <SectionHeader title="Current Unit" />
+        <SectionHeader title={t('home.currentUnit')} />
         <View style={styles.unitCard}>
           <View style={styles.unitRow}>
-            <Image source={{ uri: images.welcome }} style={styles.thumb} />
+            <Image source={images.welcome} style={styles.thumb} />
             <View style={styles.unitInfo}>
               <Text style={styles.unitTitle}>
-                Unit {currentUnit.id}: {currentUnit.title}
+                {t('course.unitLabel', { id: unitDisplayNumber })}: {getUnitDisplayTitle(safeUnit)}
               </Text>
               <ProgressBar progress={unitProgress} />
               <Text style={styles.unitMeta}>
-                {currentUnit.completed}/{currentUnit.total} Subunits Completed
+                {t('home.subunitsCompleted', {
+                  completed: safeUnit.completed,
+                  total: safeUnit.total,
+                })}
               </Text>
             </View>
           </View>
           <PrimaryButton
-            label="Continue Learning"
+            label={t('home.continueLearning')}
             onPress={() =>
-              navigation.navigate('UnitDetail', { unitId: currentUnit.id })
+              navigation.navigate('UnitDetail', { unitId: safeUnit.id })
             }
-            style={{ marginTop: 12 }}
+            style={styles.continueBtn}
           />
         </View>
 
-        <SectionHeader title="Quote of the Day" />
+        <SectionHeader title={t('home.quoteOfDay')} />
         <View style={styles.quoteCard}>
-          <Text style={styles.quoteText}>"{quoteOfDay.text}"</Text>
-          <Text style={styles.quoteAuthor}>— {quoteOfDay.author}</Text>
+          <Ionicons name="chatbox-ellipses-outline" size={28} color={colors.primary} />
+          <View style={styles.quoteBody}>
+            <Text style={styles.quoteText}>"{quote.text}"</Text>
+            <Text style={styles.quoteAuthor}>— {quote.author}</Text>
+          </View>
         </View>
 
-        <SectionHeader
-          title="Next Courses"
-          linkLabel="See All"
-          onLinkPress={() => navigation.navigate('CourseOverview')}
-        />
-        <Pressable
-          style={styles.nextCard}
-          onPress={() => navigation.navigate('CourseOverview')}
-        >
-          <View style={styles.nextThumb} />
-          <Text style={styles.nextTitle}>{nextCourse.title}</Text>
-          {nextCourse.locked && (
-            <Ionicons name="lock-closed" size={20} color={colors.locked} />
-          )}
-        </Pressable>
+        {features.hasAds ? (
+          <View style={{ marginTop: 16 }}>
+            <AdBanner
+              compact
+              onContinue={() => navigation.navigate('Membership')}
+              onNavigate={(screen) => navigation.navigate(screen)}
+            />
+          </View>
+        ) : null}
       </ScrollView>
     </SafeAreaView>
   );

@@ -1,11 +1,12 @@
 import { StyleSheet } from 'react-native';
 import { colors } from '../../theme/colors';
-import { spacing } from '../../theme/spacing';
+import { radius, spacing } from '../../theme/spacing';
+import { shadows } from '../../theme/shadows';
 
 export const styles = StyleSheet.create({
   scroll: {
     flex: 1,
-    backgroundColor: colors.white,
+    backgroundColor: colors.background,
   },
   content: {
     paddingHorizontal: spacing.lg,
@@ -21,5 +22,13 @@ export const styles = StyleSheet.create({
     color: colors.textMuted,
     marginTop: spacing.xs,
     marginBottom: spacing.lg,
+  },
+  listCard: {
+    backgroundColor: colors.white,
+    borderRadius: radius.lg,
+    paddingHorizontal: spacing.md,
+    borderWidth: 1,
+    borderColor: colors.border,
+    ...shadows.soft,
   },
 });

@@ -1,0 +1,168 @@
+{
+  "common": {
+    "continue": "Melanjutkan",
+    "next": "Berikutnya",
+    "back": "Kembali",
+    "save": "Menyimpan",
+    "done": "Selesai",
+    "cancel": "Membatalkan",
+    "loading": "Memuat...",
+    "saving": "Penghematan...",
+    "saved": "Tersimpan ✓",
+    "learner": "Pelajar",
+    "seeAll": "Lihat Semua",
+    "unit": "Satuan",
+    "lesson": "Pelajaran",
+    "of": "dari",
+    "nextBadge": "BERIKUTNYA",
+    "signOut": "Keluar",
+    "posting": "Sedang memposting...",
+    "post": "Pos",
+    "pleaseWait": "Harap tunggu..."
+  },
+  "tabs": {
+    "home": "Rumah",
+    "myLearning": "Pembelajaran Saya",
+    "progress": "Kemajuan",
+    "community": "Masyarakat",
+    "profile": "Profil"
+  },
+  "welcome": {
+    "headline": "Mulailah perjalanan Anda untuk menjadi seorang pelatih kehidupan (life coach).",
+    "getStarted": "Mulai",
+    "login": "Login"
+  },
+  "language": {
+    "title": "Pilih Bahasa Anda",
+    "subtitle": "Silakan pilih bahasa pilihan Anda.",
+    "hint": "Anda dapat mengubah bahasa nanti di Profil → Pengaturan."
+  },
+  "account": {
+    "createTitle": "Buat Akun Anda",
+    "createSubtitle": "Bergabunglah dengan Bridge Academy dan mulailah perjalanan Anda.",
+    "welcomeBack": "Selamat Datang kembali",
+    "loginSubtitle": "Masuk untuk melanjutkan pembelajaran Anda",
+    "signupSubtitle": "Buat akun Bridge Academy Anda",
+    "fullName": "Nama lengkap",
+    "email": "Alamat email",
+    "password": "Kata sandi",
+    "createAccount": "Buat Akun",
+    "noAccount": "Belum punya akun?",
+    "hasAccount": "Sudah punya akun?"
+  },
+  "goal": {
+    "title": "Apa tujuanmu?",
+    "subtitle": "Hal ini membantu kami menyesuaikan pengalaman belajar Anda."
+  },
+  "journey": {
+    "title": "Perjalanan Belajar Anda",
+    "subtitle": "{{units}} Unit • {{lessons}} Pelajaran • Kuis Interaktif",
+    "startLearning": "Mulai Belajar"
+  },
+  "home": {
+    "greeting": "Halo, {{name}} 👋",
+    "subGreeting": "Terus semangat! Kamu sudah melakukan yang terbaik.",
+    "mainProgress": "Kemajuan Kursus Utama",
+    "unitsCompleted": "Anda telah menyelesaikan {{completed}} dari {{total}} unit",
+    "continueUnit": "Lanjutkan Unit {{id}}",
+    "currentUnit": "Unit Saat Ini",
+    "subunitsCompleted": "{{completed}}/{{total}} Subunit Selesai",
+    "continueLearning": "Lanjutkan Pembelajaran",
+    "quoteOfDay": "Kutipan Hari Ini",
+    "nextCourses": "Kursus Berikutnya"
+  },
+  "myLearning": {
+    "title": "Pembelajaran Saya",
+    "unitsMeta": "{{units}} Unit",
+    "viewAllUnits": "Lihat Semua {{count}} Unit",
+    "recentActivity": "Aktivitas Terkini",
+    "viewMainCourse": "Lihat Hidangan Utama",
+    "mainCourse": "Hidangan utama",
+    "advancedCourses": "Kursus Tingkat Lanjut",
+    "advancedComingSoon": "Kursus tingkat lanjut akan segera hadir.",
+    "advancedLocked": "Kursus lanjutan terbuka setelah menyelesaikan kursus utama ({{percent}}% selesai)."
+  },
+  "course": {
+    "overview": "Gambaran Umum Kursus",
+    "allUnits": "Semua Unit",
+    "units": "Satuan",
+    "lessons": "Pelajaran",
+    "hours": "Jam",
+    "whatYouLearn": "Apa yang akan Anda pelajari",
+    "startLearning": "Mulai Belajar",
+    "unitLabel": "Unit {{id}}"
+  },
+  "unit": {
+    "continueNext": "Lanjutkan ke Subunit Berikutnya",
+    "startUnit": "Unit Awal"
+  },
+  "lesson": {
+    "markComplete": "Tandai sebagai Selesai",
+    "nextLesson": "Berikutnya",
+    "writeNotes": "Tulis catatanmu di sini...",
+    "writeNotesShort": "Tulis catatanmu...",
+    "saveNote": "Simpan Catatan",
+    "textLesson": "Pelajaran teks",
+    "contentFallback": "Pelajaran ini merupakan bagian dari mata kuliah Psikologi Umum. Tinjau kembali materi untuk \"{{title}}\" dan tandai selesai setelah selesai.",
+    "unitLessonOf": "Unit {{unitId}} • Pelajaran {{current}} dari {{total}}",
+    "bookmarkAdded": "Ditandai sebagai favorit",
+    "bookmarkRemoved": "Bookmark dihapus",
+    "typeVideo": "Video",
+    "typeAudio": "Audio",
+    "typeQuiz": "Kuis",
+    "typeText": "Teks"
+  },
+  "quiz": {
+    "nextQuestion": "Pertanyaan Selanjutnya",
+    "finishQuiz": "Selesaikan Kuis",
+    "defaultTitle": "Kuis",
+    "questionTemplate": "Mengenai \"{{topic}}\", pernyataan mana yang paling akurat? (Pertanyaan {{num}})",
+    "explanationTemplate": "Kuis ini mengulas ide-ide kunci dari \"{{topic}}\" dalam mata kuliah Psikologi Umum.",
+    "optionA": "Hal ini tidak relevan dengan praktik kepelatihan.",
+    "optionB": "Hal ini membantu menjelaskan pikiran, emosi, dan perilaku.",
+    "optionC": "Hal ini menggantikan kebutuhan akan hubungan baik dengan klien.",
+    "optionD": "Ini hanya berlaku untuk pengaturan terapi klinis."
+  },
+  "progress": {
+    "title": "Kemajuan Saya",
+    "unitsCompleted": "Unit yang Selesai",
+    "lessonsCompleted": "Pelajaran Selesai",
+    "hoursStudied": "Jam Belajar",
+    "averageScore": "Rata-rata Skor Kuis",
+    "studyStreak": "Rentetan Studi",
+    "days": "hari",
+    "unitProgress": "Kemajuan Unit",
+    "scoreTrend": "Tren Skor",
+    "calendar": "Kalender Belajar",
+    "calendarHint": "Catat kebiasaan belajar harian Anda."
+  },
+  "achievements": {
+    "badges": "Lencana Anda",
+    "recent": "Prestasi Terkini",
+    "certificate": "Pratinjau Sertifikat",
+    "download": "Unduh Sertifikat"
+  },
+  "community": {
+    "title": "Masyarakat",
+    "placeholder": "Bagikan perjalanan belajar Anda...",
+    "empty": "Belum ada postingan. Jadilah yang pertama berbagi!"
+  },
+  "settings": {
+    "title": "Pengaturan",
+    "profile": "Profil",
+    "name": "Nama",
+    "email": "E-mail",
+    "language": "Bahasa",
+    "savingLanguage": "(penghematan...)"
+  },
+  "menu": {
+    "app": "Aplikasi",
+    "course": "Kursus",
+    "continueLessons": "Lanjutkan pelajaran",
+    "myProgress": "Kemajuan Saya",
+    "noLessons": "Belum ada pelajaran yang tersedia. Mulai dari Pembelajaran Saya."
+  },
+  "logo": {
+    "tagline": "Psikologi Umum"
+  }
+}

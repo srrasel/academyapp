@@ -8,6 +8,8 @@ const GOAL_ICONS = {
   people: 'people-outline',
   briefcase: 'briefcase-outline',
   school: 'school-outline',
+  happy: 'happy-outline',
+  book: 'book-outline',
 };
 
 const GOAL_ICONS_MCI = {
@@ -20,35 +22,54 @@ export default function SelectionItem({
   onPress,
   flag,
   icon,
+  iconColor,
+  iconBg,
+  showChevron = false,
+  tone = 'default',
 }) {
+  const isWarm = tone === 'warm';
+  const resolvedIconColor = iconColor || (isWarm ? colors.accentWarmDark : colors.primary);
+
   return (
     <Pressable
       onPress={onPress}
-      style={[styles.item, selected && styles.itemSelected]}
+      style={[
+        styles.item,
+        isWarm && styles.itemWarm,
+        selected && (isWarm ? styles.itemWarmSelected : styles.itemSelected),
+      ]}
     >
-      <View style={styles.leftIcon}>
+      <View
+        style={[
+          styles.leftIcon,
+          isWarm && styles.leftIconWarm,
+          iconBg ? { backgroundColor: iconBg } : null,
+        ]}
+      >
         {flag ? (
           <Text style={styles.flag}>{flag}</Text>
         ) : GOAL_ICONS_MCI[icon] ? (
           <MaterialCommunityIcons
             name={GOAL_ICONS_MCI[icon]}
             size={22}
-            color={colors.primary}
+            color={resolvedIconColor}
           />
         ) : (
           <Ionicons
             name={GOAL_ICONS[icon] || 'ellipse-outline'}
             size={22}
-            color={colors.primary}
+            color={resolvedIconColor}
           />
         )}
       </View>
       <Text style={styles.label}>{label}</Text>
-      {selected && (
-        <View style={styles.check}>
+      {selected ? (
+        <View style={[styles.check, isWarm && styles.checkWarm]}>
           <Ionicons name="checkmark" size={16} color={colors.white} />
         </View>
-      )}
+      ) : showChevron ? (
+        <Ionicons name="chevron-forward" size={18} color={colors.textMuted} />
+      ) : null}
     </Pressable>
   );
 }

@@ -1,12 +1,21 @@
-import { View, Text, Pressable } from 'react-native';
+import { View, Text, Pressable, Image } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { colors } from '../../theme/colors';
 import { styles } from './AppHeader.styles';
 
-export default function AppHeader({ variant = 'home', title, onBack }) {
+const logoImage = require('../../../assets/logo.png');
+
+export default function AppHeader({
+  variant = 'home',
+  title,
+  onBack,
+  onMenuPress,
+  onNotificationsPress,
+  onSearchPress,
+}) {
   if (variant === 'back') {
     return (
-      <View style={styles.row}>
+      <View style={styles.backRow}>
         <Pressable onPress={onBack} style={styles.iconBtn} hitSlop={8}>
           <Ionicons name="chevron-back" size={24} color={colors.text} />
         </Pressable>
@@ -16,12 +25,29 @@ export default function AppHeader({ variant = 'home', title, onBack }) {
     );
   }
 
+  if (variant === 'backTitle') {
+    return (
+      <View style={styles.backRow}>
+        <Pressable onPress={onBack} style={styles.iconBtn} hitSlop={8}>
+          <Ionicons name="chevron-back" size={24} color={colors.text} />
+        </Pressable>
+        <Text style={styles.backTitle} numberOfLines={1}>
+          {title}
+        </Text>
+        <View style={styles.right} />
+      </View>
+    );
+  }
+
   if (variant === 'title') {
     return (
-      <View style={styles.row}>
-        <View style={styles.iconBtn} />
-        <Text style={styles.title}>{title}</Text>
-        <Pressable style={styles.iconBtn}>
+      <View style={styles.backRow}>
+        <Text style={styles.screenTitle}>{title}</Text>
+        <Pressable
+          style={styles.iconBtn}
+          onPress={onSearchPress || onNotificationsPress}
+          hitSlop={8}
+        >
           <Ionicons name="search-outline" size={22} color={colors.text} />
         </Pressable>
       </View>
@@ -30,13 +56,13 @@ export default function AppHeader({ variant = 'home', title, onBack }) {
 
   return (
     <View style={styles.row}>
-      <Pressable style={styles.iconBtn}>
+      <Pressable style={styles.iconBtn} onPress={onMenuPress} hitSlop={8}>
         <Ionicons name="menu" size={24} color={colors.text} />
       </Pressable>
       <View style={styles.center}>
-        <Text style={styles.logoText}>BRIDGE ACADEMY</Text>
+        <Image source={logoImage} style={styles.headerLogo} resizeMode="contain" />
       </View>
-      <Pressable style={styles.iconBtn}>
+      <Pressable style={styles.iconBtn} onPress={onNotificationsPress} hitSlop={8}>
         <Ionicons name="notifications-outline" size={22} color={colors.text} />
       </Pressable>
     </View>

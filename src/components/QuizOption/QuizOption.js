@@ -1,19 +1,47 @@
 import { View, Text, Pressable } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
-import { colors } from '../../theme/colors';
 import { styles } from './QuizOption.styles';
 
-export default function QuizOption({ id, text, selected, onPress }) {
+export default function QuizOption({
+  id,
+  text,
+  selected,
+  onPress,
+  disabled = false,
+  state = 'default', // default | selected | correct | wrong
+}) {
+  const isCorrect = state === 'correct';
+  const isWrong = state === 'wrong';
+  const isSelected = selected || state === 'selected';
+
   return (
     <Pressable
-      style={[styles.option, selected && styles.optionSelected]}
+      style={[
+        styles.option,
+        isSelected && styles.optionSelected,
+        isCorrect && styles.optionCorrect,
+        isWrong && styles.optionWrong,
+      ]}
       onPress={onPress}
+      disabled={disabled}
     >
-      <View style={styles.letter}>
-        <Text style={styles.letterText}>{id}</Text>
+      <View
+        style={[
+          styles.letter,
+          isSelected && styles.letterSelected,
+          isCorrect && styles.letterCorrect,
+          isWrong && styles.letterWrong,
+        ]}
+      >
+        <Text
+          style={[
+            styles.letterText,
+            (isSelected || isCorrect || isWrong) && styles.letterTextSelected,
+          ]}
+        >
+          {id}
+        </Text>
       </View>
       <Text style={styles.text}>{text}</Text>
-      {selected && <Ionicons name="checkmark-circle" size={22} color={colors.success} />}
     </Pressable>
   );
 }

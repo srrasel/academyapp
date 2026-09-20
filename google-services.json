@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "1035786415301",
+    "project_id": "academy-4f825",
+    "storage_bucket": "academy-4f825.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1035786415301:android:41aba946a98251d24954ac",
+        "android_client_info": {
+          "package_name": "com.bridgeacademy.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1035786415301-0i2l5d9cnlu3fpsb0rgmc0t94i3g0h2h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bridgeacademy.app",
+            "certificate_hash": "e85efc6618dd19a5cfa01731d2841c7ebc94e273"
+          }
+        },
+        {
+          "client_id": "1035786415301-rvoo6vqht4e1gkr955etb3n5f7com5ei.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bridgeacademy.app",
+            "certificate_hash": "4e9a35a0a95d26c24e74f1cd940be0b4eb5b2765"
+          }
+        },
+        {
+          "client_id": "1035786415301-u7u1q8bvfd7q8us3dcsfpj4tonbeb9tv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bridgeacademy.app",
+            "certificate_hash": "8d9800fccdd90554d11dc419a792311dc73dec20"
+          }
+        },
+        {
+          "client_id": "1035786415301-3hln8akff6qg0cf5mi12kgt77boa67n8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZtrHZKOh7xo0rXZidCua7xq7umj2CLDM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1035786415301-3hln8akff6qg0cf5mi12kgt77boa67n8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

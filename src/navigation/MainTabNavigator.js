@@ -1,26 +1,54 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import HomeScreen from '../screens/HomeScreen/HomeScreen';
 import MyLearningScreen from '../screens/MyLearningScreen/MyLearningScreen';
 import ProgressScreen from '../screens/ProgressScreen/ProgressScreen';
-import AchievementsScreen from '../screens/AchievementsScreen/AchievementsScreen';
-import PlaceholderScreen from '../screens/PlaceholderScreen/PlaceholderScreen';
+import ProfileScreen from '../screens/ProfileScreen/ProfileScreen';
+import CommunityScreen from '../screens/CommunityScreen/CommunityScreen';
+import { useLocale } from '../context/LocaleContext';
 import { TAB_BAR_HEIGHT } from '../constants/layout';
 import { colors } from '../theme/colors';
 
 const Tab = createBottomTabNavigator();
 
 const TAB_ICONS = {
-  Home: ['home', 'home-outline'],
-  MyLearning: ['book', 'book-outline'],
-  Progress: ['stats-chart', 'stats-chart-outline'],
-  Community: ['people', 'people-outline'],
-  Profile: ['person', 'person-outline'],
+  Home: {
+    active: 'home',
+    inactive: 'home-outline',
+    color: '#F59E0B',
+    bg: '#FEF3C7',
+  },
+  MyLearning: {
+    active: 'book',
+    inactive: 'book-outline',
+    color: '#16A34A',
+    bg: '#DCFCE7',
+  },
+  Progress: {
+    active: 'stats-chart',
+    inactive: 'stats-chart-outline',
+    color: '#2563EB',
+    bg: '#DBEAFE',
+  },
+  Community: {
+    active: 'people',
+    inactive: 'people-outline',
+    color: '#7C3AED',
+    bg: '#EDE9FE',
+  },
+  Profile: {
+    active: 'person',
+    inactive: 'person-outline',
+    color: colors.primary,
+    bg: '#E0E7FF',
+  },
 };
 
 export default function MainTabNavigator() {
   const insets = useSafeAreaInsets();
+  const { t } = useLocale();
   const tabBarHeight = TAB_BAR_HEIGHT + insets.bottom;
 
   return (
@@ -33,32 +61,54 @@ export default function MainTabNavigator() {
           height: tabBarHeight,
           paddingTop: 6,
           paddingBottom: insets.bottom,
+          backgroundColor: colors.background,
+          borderTopColor: 'rgba(15, 42, 110, 0.08)',
         },
-        tabBarIcon: ({ focused, color, size }) => {
-          const [active, inactive] = TAB_ICONS[route.name] || ['ellipse', 'ellipse-outline'];
+        tabBarIcon: ({ focused, size }) => {
+          const config = TAB_ICONS[route.name] || {
+            active: 'ellipse',
+            inactive: 'ellipse-outline',
+            color: colors.primary,
+            bg: colors.quoteBg,
+          };
+          const iconColor = focused ? config.color : colors.textMuted;
           return (
-            <Ionicons name={focused ? active : inactive} size={size} color={color} />
+            <View
+              style={{
+                width: size + 14,
+                height: size + 14,
+                borderRadius: (size + 14) / 2,
+                alignItems: 'center',
+                justifyContent: 'center',
+                backgroundColor: focused ? config.bg : 'transparent',
+              }}
+            >
+              <Ionicons
+                name={focused ? config.active : config.inactive}
+                size={size}
+                color={iconColor}
+              />
+            </View>
           );
         },
       })}
     >
-      <Tab.Screen name="Home" component={HomeScreen} options={{ title: 'Home' }} />
+      <Tab.Screen name="Home" component={HomeScreen} options={{ title: t('tabs.home') }} />
       <Tab.Screen
         name="MyLearning"
         component={MyLearningScreen}
-        options={{ title: 'My Learning' }}
+        options={{ title: t('tabs.myLearning') }}
       />
-      <Tab.Screen name="Progress" component={ProgressScreen} options={{ title: 'Progress' }} />
+      <Tab.Screen name="Progress" component={ProgressScreen} options={{ title: t('tabs.progress') }} />
       <Tab.Screen
         name="Community"
-        component={PlaceholderScreen}
-        initialParams={{ title: 'Community' }}
-        options={{ title: 'Community' }}
+        component={CommunityScreen}
+        options={{ title: t('tabs.community') }}
       />
       <Tab.Screen
         name="Profile"
-        component={AchievementsScreen}
-        options={{ title: 'Profile' }}
+        component={ProfileScreen}
+        options={{ title: t('tabs.profile') }}
       />
     </Tab.Navigator>
   );

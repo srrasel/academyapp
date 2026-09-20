@@ -14,8 +14,16 @@ export const styles = StyleSheet.create({
     gap: spacing.md,
   },
   optionSelected: {
+    borderColor: colors.primary,
+    backgroundColor: colors.primaryLight,
+  },
+  optionCorrect: {
     borderColor: colors.success,
     backgroundColor: colors.successLight,
+  },
+  optionWrong: {
+    borderColor: '#DC2626',
+    backgroundColor: '#FEE2E2',
   },
   letter: {
     width: 28,
@@ -29,6 +37,18 @@ export const styles = StyleSheet.create({
     fontSize: 13,
     fontWeight: '700',
     color: colors.text,
+  },
+  letterSelected: {
+    backgroundColor: colors.primary,
+  },
+  letterCorrect: {
+    backgroundColor: colors.success,
+  },
+  letterWrong: {
+    backgroundColor: '#DC2626',
+  },
+  letterTextSelected: {
+    color: colors.white,
   },
   text: {
     flex: 1,

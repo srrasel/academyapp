@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
 import { colors } from '../../theme/colors';
 import { radius, spacing } from '../../theme/spacing';
+import { shadows } from '../../theme/shadows';
 
 export const styles = StyleSheet.create({
   scroll: {
@@ -11,32 +12,44 @@ export const styles = StyleSheet.create({
     paddingHorizontal: spacing.lg,
     paddingBottom: spacing.xxl,
   },
+  headerRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: spacing.md,
+  },
   title: {
     fontSize: 22,
     fontWeight: '700',
     color: colors.text,
-    marginBottom: spacing.lg,
+  },
+  emptyText: {
+    color: colors.textMuted,
+    marginBottom: spacing.md,
+    fontSize: 14,
   },
   badgesRow: {
     flexDirection: 'row',
-    gap: spacing.md,
+    gap: spacing.lg,
     marginBottom: spacing.xl,
     paddingRight: spacing.lg,
   },
   badge: {
     alignItems: 'center',
-    width: 72,
+    width: 80,
   },
   badgeCircle: {
-    width: 56,
-    height: 56,
-    borderRadius: 28,
+    width: 64,
+    height: 64,
+    borderRadius: 32,
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: spacing.sm,
+    ...shadows.soft,
   },
   badgeLabel: {
     fontSize: 11,
+    fontWeight: '600',
     color: colors.textMuted,
     textAlign: 'center',
   },
@@ -50,14 +63,17 @@ export const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: colors.border,
     gap: spacing.md,
+    ...shadows.soft,
   },
   achievementIcon: {
     width: 44,
     height: 44,
     borderRadius: 22,
-    backgroundColor: colors.quoteBg,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  achievementBody: {
+    flex: 1,
   },
   achievementTitle: {
     fontSize: 15,
@@ -73,47 +89,28 @@ export const styles = StyleSheet.create({
     fontSize: 11,
     color: colors.textMuted,
   },
-  certCard: {
-    backgroundColor: colors.white,
-    borderRadius: radius.lg,
-    padding: spacing.lg,
-    borderWidth: 2,
-    borderColor: colors.gold,
-    alignItems: 'center',
-    marginTop: spacing.lg,
-  },
-  certBorder: {
-    borderWidth: 1,
-    borderColor: colors.border,
-    borderRadius: radius.md,
-    padding: spacing.xl,
-    width: '100%',
-    alignItems: 'center',
-  },
-  certTitle: {
-    fontSize: 12,
-    letterSpacing: 2,
-    color: colors.textMuted,
-    marginBottom: spacing.md,
-  },
-  certName: {
-    fontSize: 22,
-    fontWeight: '700',
-    color: colors.navy,
+  downloadBtn: {
+    marginTop: spacing.md,
     marginBottom: spacing.sm,
   },
-  certCourse: {
-    fontSize: 14,
-    color: colors.textMuted,
-    textAlign: 'center',
+  benefitsCard: {
+    marginTop: spacing.lg,
+    backgroundColor: colors.white,
+    borderRadius: 12,
+    padding: spacing.lg,
+    borderWidth: 1,
+    borderColor: colors.border,
   },
-  certAcademy: {
+  benefitsTitle: {
     fontSize: 16,
     fontWeight: '700',
-    color: colors.primary,
-    marginTop: spacing.md,
+    color: colors.text,
+    marginBottom: spacing.sm,
   },
-  seal: {
-    marginTop: spacing.lg,
+  benefitsItem: {
+    fontSize: 14,
+    color: colors.textMuted,
+    lineHeight: 22,
+    marginBottom: 4,
   },
 });

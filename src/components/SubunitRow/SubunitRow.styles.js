@@ -13,15 +13,45 @@ export const styles = StyleSheet.create({
   },
   line: {
     position: 'absolute',
-    top: 28,
+    top: 32,
     bottom: -8,
     width: 2,
     backgroundColor: colors.border,
     left: 15,
   },
+  dotCompleted: {
+    width: 24,
+    height: 24,
+    borderRadius: 12,
+    backgroundColor: colors.success,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  dotCurrent: {
+    width: 24,
+    height: 24,
+    borderRadius: 12,
+    backgroundColor: colors.primary,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  dotCurrentText: {
+    fontSize: 12,
+    fontWeight: '700',
+    color: colors.white,
+  },
+  dotPending: {
+    width: 24,
+    height: 24,
+    borderRadius: 12,
+    borderWidth: 2,
+    borderColor: colors.border,
+    backgroundColor: colors.white,
+  },
   content: {
     flex: 1,
     marginLeft: spacing.sm,
+    paddingTop: 2,
   },
   title: {
     fontSize: 15,
@@ -31,6 +61,6 @@ export const styles = StyleSheet.create({
   meta: {
     fontSize: 12,
     color: colors.textMuted,
-    marginTop: 2,
+    marginTop: 4,
   },
 });

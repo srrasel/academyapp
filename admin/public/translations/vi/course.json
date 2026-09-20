@@ -1,0 +1,25 @@
+{
+  "id": "general-psychology",
+  "wpCourseId": 6382,
+  "title": "Khóa học cơ bản về huấn luyện viên cuộc sống – Tâm lý học đại cương",
+  "subtitle": "Tâm lý học đại cương — Học viện Bridge",
+  "description": "Khóa học tiên quyết giúp bạn nắm vững các nguyên tắc cơ bản về tư duy, cảm xúc và hành vi của con người. Gồm 20 bài học được cấu trúc bài bản với âm thanh, hình ảnh, video và các bài kiểm tra tương tác.",
+  "stats": {
+    "units": 20,
+    "lessons": 199,
+    "hours": "25-30",
+    "quizzes": 73,
+    "lectures": 126
+  },
+  "totalUnits": 20,
+  "learnings": [
+    "Lịch sử tâm lý học trong huấn luyện",
+    "Cơ chế hoạt động của não bộ",
+    "Hiểu về tính cách",
+    "Những thách thức thường gặp về sức khỏe tinh thần và cảm xúc",
+    "Huấn luyện so với trị liệu"
+  ],
+  "sourceUrl": "https://bridge-academy.vn/en/courses-3/general-course/",
+  "_translated": true,
+  "_locale": "vi"
+}

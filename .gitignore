@@ -26,13 +26,17 @@ expo-env.d.ts
 npm-debug.*
 yarn-debug.*
 yarn-error.*
+*.log
+debug.log
 
 # macOS
 .DS_Store
 *.pem
 
 # local env files
+.env
 .env*.local
+admin/.env
 
 # typescript
 *.tsbuildinfo
@@ -40,3 +44,13 @@ yarn-error.*
 # generated native folders
 /ios
 /android
+android_old*/
+android_old_*/
+
+# admin build
+admin/dist/
+admin/node_modules/
+
+# local leftovers
+assets/*(1).*
+assets/*-temp.*
